@@ -1,11 +1,20 @@
-# Anti-Detect Browser Tools - Technical Deep Dives
+# Anti-Bot Bypass Tools - Technical Deep Dives
 
 > **Honest, no-BS technical analysis of web scraping and anti-bot bypass tools.**
 >
 > Learn what actually works, how it works under the hood, and which tool fits your use case.
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
-[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](http://makeapullrequest.com)
+[![GitHub topics](https://img.shields.io/badge/topics-web--scraping%20%7C%20anti--detection%20%7C%20cloudflare--bypass-blue)](#)
+
+<!--
+GitHub Repository Topics (add these in repo settings):
+web-scraping, anti-detection, bot-bypass, cloudflare-bypass, captcha-bypass,
+playwright, selenium, puppeteer, browser-automation, fingerprint-spoofing,
+anti-bot, stealth-browser, datadome-bypass, kasada-bypass, akamai-bypass,
+camoufox, patchright, seleniumbase, botasaurus, undetected-chromedriver,
+web-automation, scraping-tools, antibot-bypass, turnstile-bypass,
+browser-fingerprinting, cdp-stealth, juggler, firefox-automation
+-->
 
 ---
 
@@ -23,13 +32,14 @@ This repository provides:
 
 ## Tool Analyses
 
-### Browser Automation & Stealth
-
-| Tool | Type | Best For | Analysis |
-|------|------|----------|----------|
-| **Botasaurus** | Selenium wrapper | Human-like mouse movements, Python projects | [Read Analysis](./botasaurus-analysis.md) |
-| **Patchright** | Playwright binary patch | Maximum stealth, enterprise targets | [Read Analysis](./patchright.md) |
-| **XDriver** | Playwright CDP patch | Quick stealth upgrade for Playwright | [Read Analysis](./XDriver-Analysis.md) |
+| Tool | Type | Language | Best For | Analysis |
+|------|------|----------|----------|----------|
+| [**Camoufox**](./camoufox.md) | Custom Firefox build | Python | C++ level stealth, fingerprint rotation | [Read →](./camoufox.md) |
+| [**Patchright**](./patchright.md) | Playwright binary patch | Python, Node.js, .NET | Maximum stealth with Playwright API | [Read →](./patchright.md) |
+| [**SeleniumBase**](./seleniumbase.md) | Selenium + UC Mode | Python | CAPTCHA solving, testing framework | [Read →](./seleniumbase.md) |
+| [**Botasaurus**](./botasaurus.md) | Selenium wrapper | Python | Human-like mouse movements | [Read →](./botasaurus.md) |
+| [**XDriver**](./xdriver.md) | Playwright CDP patch | Python | Quick stealth without code changes | [Read →](./xdriver.md) |
+| [**BotBrowser**](./botbrowser.md) | Patched Chromium | Multi | Enterprise anti-detection | [Read →](./botbrowser.md) |
 
 ---
 
@@ -37,27 +47,53 @@ This repository provides:
 
 ### Stealth Capabilities
 
-| Feature | Botasaurus | Patchright | XDriver |
-|---------|:----------:|:----------:|:-------:|
-| `navigator.webdriver` bypass | ✅ | ✅ | ✅ |
-| `Runtime.enable` bypass | ❌ | ✅ | ✅ |
-| Human mouse simulation | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐ |
-| CDP fingerprint evasion | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| Network-layer injection | ❌ | ✅ | ❌ |
-| Cloudflare bypass | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ |
-| DataDome bypass | ⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ |
+| Feature | Camoufox | Patchright | SeleniumBase | Botasaurus | XDriver | BotBrowser |
+|---------|:--------:|:----------:|:------------:|:----------:|:-------:|:----------:|
+| `navigator.webdriver` bypass | ✅ C++ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| `Runtime.enable` bypass | ✅ Juggler | ✅ | ✅ | ❌ | ✅ | ✅ |
+| Fingerprint rotation | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ❌ | ⭐⭐⭐⭐ |
+| Human mouse simulation | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐ |
+| CDP fingerprint evasion | N/A | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Cross-platform parity | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ |
+| CAPTCHA solving | ❌ | ❌ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ❌ | ❌ |
+| Cloudflare bypass | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Ease of use | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
+| Cost | Free | Free | Free | Free | Free | $$ |
+
+### Anti-Bot Service Coverage
+
+| Service | Camoufox | Patchright | SeleniumBase | Botasaurus | XDriver | BotBrowser |
+|---------|:--------:|:----------:|:------------:|:----------:|:-------:|:----------:|
+| Cloudflare WAF | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Cloudflare Turnstile | ⚠️ | ✅ | ✅ | ✅ | ✅ | ✅ |
+| DataDome | ✅ | ✅ | ✅ | ⚠️ | ✅ | ✅ |
+| Kasada | ⚠️ | ✅ | ✅ | ❌ | ✅ | ✅ |
+| PerimeterX | ✅ | ⚠️ | ✅ | ❌ | ✅ | ✅ |
+| Akamai | ⚠️ | ⚠️ | ⚠️ | ❌ | ⚠️ | ✅ |
+| Imperva | ✅ | ⚠️ | ✅ | ❌ | ✅ | ✅ |
+
+✅ = Reliably bypasses | ⚠️ = Partial/conditional | ❌ = Not effective
+
+> **Note:** Camoufox uses Firefox (~3% market share). Some WAFs may flag Firefox users more aggressively.
+
+---
+
+## Decision Guide
 
 ### When to Use What
 
-| Your Situation | Recommended Tool |
-|----------------|------------------|
-| Python project, basic protection | **Botasaurus** |
-| Need human-like mouse movements | **Botasaurus** |
-| Cloudflare Enterprise / Akamai | **Patchright** |
-| Existing Playwright codebase | **XDriver** |
-| Maximum stealth required | **Patchright** + residential proxies |
-| Quick prototype / testing | **Botasaurus** |
-| Node.js / TypeScript project | **Patchright** |
+| Your Situation | Recommended Tool | Why |
+|----------------|------------------|-----|
+| **Undetectable fingerprint spoofing** | [Camoufox](./camoufox.md) | C++ level = truly native, JS can't detect |
+| **Need fingerprint rotation** | [Camoufox](./camoufox.md) | BrowserForge statistical accuracy |
+| **Enterprise-level anti-bot** (Akamai, DataDome) | [BotBrowser](./botbrowser.md) | Most comprehensive fingerprint control |
+| **Need CAPTCHA solving** | [SeleniumBase](./seleniumbase.md) | Built-in Turnstile/reCAPTCHA handling |
+| **Maximum Chromium stealth + free** | [Patchright](./patchright.md) | Protocol-level CDP bypass |
+| **Human-like mouse movements** | [Botasaurus](./botasaurus.md) | Best Bézier curve implementation |
+| **Existing Playwright code** | [XDriver](./xdriver.md) | No code changes needed |
+| **Quick prototype** | [Botasaurus](./botasaurus.md) | Simplest API |
+| **Node.js / TypeScript** | [Patchright](./patchright.md) | Multi-language support |
+| **Testing framework needed** | [SeleniumBase](./seleniumbase.md) | pytest/unittest integration |
 
 ---
 
@@ -66,29 +102,33 @@ This repository provides:
 Understanding detection helps you choose the right tool:
 
 ```
-┌─────────────────────────────────────────────────────────────┐
-│                    DETECTION LAYERS                         │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 1: CDP Protocol Detection                            │
-│  ├─ Runtime.enable timing attacks                           │
-│  ├─ Execution context fingerprinting          [Patchright]  │
-│  └─ Binding exposure checks                   [XDriver]     │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 2: Browser Fingerprinting                            │
-│  ├─ navigator.webdriver property              [All tools]   │
-│  ├─ Plugin/extension enumeration                            │
-│  └─ Canvas/WebGL fingerprints                               │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 3: Behavioral Analysis                               │
-│  ├─ Mouse movement patterns                   [Botasaurus]  │
-│  ├─ Click timing distribution                               │
-│  └─ Scroll/navigation patterns                              │
-├─────────────────────────────────────────────────────────────┤
-│  Layer 4: Network Analysis                                  │
-│  ├─ TLS fingerprinting (JA3/JA4)             [None - hard]  │
-│  ├─ IP reputation scoring                    [Use proxies]  │
-│  └─ Request timing patterns                                 │
-└─────────────────────────────────────────────────────────────┘
+┌──────────────────────────────────────────────────────────────────────┐
+│                         DETECTION LAYERS                              │
+├──────────────────────────────────────────────────────────────────────┤
+│  Layer 1: Protocol Detection                                          │
+│  ├─ Runtime.enable timing         [Patchright, BotBrowser, XDriver]  │
+│  ├─ Execution context leaks       [Patchright, BotBrowser]           │
+│  ├─ Binding exposure              [XDriver, BotBrowser]              │
+│  └─ Juggler isolation (Firefox)   [Camoufox - unique]                │
+├──────────────────────────────────────────────────────────────────────┤
+│  Layer 2: Browser Fingerprinting                                      │
+│  ├─ navigator.webdriver           [All tools]                        │
+│  ├─ Canvas/WebGL fingerprints     [Camoufox C++, BotBrowser]         │
+│  ├─ Screen/Window properties      [Camoufox C++ - undetectable]      │
+│  ├─ Audio context spoofing        [Camoufox C++, BotBrowser]         │
+│  └─ Font enumeration              [Camoufox, BotBrowser]             │
+├──────────────────────────────────────────────────────────────────────┤
+│  Layer 3: Behavioral Analysis                                         │
+│  ├─ Mouse movement patterns       [Botasaurus, Camoufox]             │
+│  ├─ Click timing distribution     [Botasaurus, SeleniumBase]         │
+│  └─ Scroll/navigation patterns    [Botasaurus]                       │
+├──────────────────────────────────────────────────────────────────────┤
+│  Layer 4: Network Analysis                                            │
+│  ├─ TLS fingerprinting (JA3/JA4)  [BotBrowser partial]               │
+│  ├─ WebRTC/UDP leakage            [Camoufox, BotBrowser, XDriver]    │
+│  ├─ IP reputation scoring         [Use proxies]                      │
+│  └─ DNS leakage                   [BotBrowser SOCKS5H]               │
+└──────────────────────────────────────────────────────────────────────┘
 ```
 
 ---
@@ -116,41 +156,64 @@ Understanding detection helps you choose the right tool:
 
 ---
 
-## Detection Tests
+## Detection Test Sites
 
-Want to test your setup? Try these:
+Test your setup against these:
 
 | Test | What It Checks | URL |
 |------|----------------|-----|
+| Sannysoft | Automation detection | [bot.sannysoft.com](https://bot.sannysoft.com/) |
 | BrowserScan | Comprehensive fingerprint | [browserscan.net](https://www.browserscan.net/bot-detection) |
 | Fingerprint.com | Bot detection | [fingerprint.com](https://fingerprint.com/products/bot-detection/) |
 | CreepJS | Browser fingerprint | [abrahamjuliot.github.io/creepjs](https://abrahamjuliot.github.io/creepjs/) |
-| Cloudflare | WAF bypass | Various protected sites |
-| Sannysoft | Automation detection | [bot.sannysoft.com](https://bot.sannysoft.com/) |
+| Pixelscan | Leak detection | [pixelscan.net](https://pixelscan.net/) |
+
+---
+
+## Tool Combination Strategies
+
+For maximum effectiveness, consider combining tools:
+
+### Strategy 1: Undetectable Fingerprint Rotation
+```
+Camoufox (C++ spoofing + BrowserForge) + Residential Proxies
+= Statistically accurate fingerprints + clean IPs
+= Best for: High-volume scraping with identity rotation
+```
+
+### Strategy 2: Behavioral + Protocol Stealth
+```
+Botasaurus (human mouse) + BotBrowser (fingerprint control)
+= Human-like behavior + consistent fingerprints
+```
+
+### Strategy 3: CAPTCHA + Stealth
+```
+SeleniumBase UC Mode + Residential Proxies
+= Automatic CAPTCHA solving + clean IP reputation
+```
+
+### Strategy 4: Quick Testing
+```
+XDriver (one-command activation) + Sannysoft test
+= Fast iteration on stealth configuration
+```
+
+### Strategy 5: Firefox-based Maximum Stealth
+```
+Camoufox (Juggler isolation) + geoip auto-detection
+= No automation artifacts visible + locale consistency
+= Best for: Sites that don't discriminate against Firefox
+```
 
 ---
 
 ## Contributing
 
-Found a tool worth analyzing? Open an issue or PR with:
-
+Found a tool worth analyzing? Open an issue with:
 1. Tool name and repository URL
 2. What anti-detection approach it uses
 3. What protection systems it claims to bypass
-
-**Analysis format:**
-- Technical deep-dive into source code
-- Honest effectiveness assessment
-- Clear use case recommendations
-- Limitations section (required!)
-
----
-
-## Related Resources
-
-- [AntiBotBypass](https://github.com/AntiBotBypass/CloudFlare_bypass_info) - Cloudflare bypass research
-- [AntiBotBypass/Fuck_Turnstile](https://github.com/AntiBotBypass/Fuck_Turnstile) - Turnstile analysis
-- [AntiBotBypass/patchright](https://github.com/AntiBotBypass/patchright) - Patchright analysis
 
 ---
 
@@ -161,15 +224,23 @@ This repository is for **educational and legitimate purposes**:
 - Academic study
 - Authorized penetration testing
 - Personal data retrieval from your own accounts
-- Competitive analysis within legal bounds
 
-Always respect `robots.txt`, rate limits, and terms of service. The authors are not responsible for misuse.
+Always respect `robots.txt`, rate limits, and terms of service.
 
 ---
 
-## License
+## GitHub Topics
 
-MIT - Use freely, attribute if helpful.
+Add these topics to your GitHub repository for better SEO:
+
+```
+web-scraping, anti-detection, bot-bypass, cloudflare-bypass, captcha-bypass,
+playwright, selenium, puppeteer, browser-automation, fingerprint-spoofing,
+anti-bot, stealth-browser, datadome-bypass, kasada-bypass, akamai-bypass,
+camoufox, patchright, seleniumbase, botasaurus, undetected-chromedriver,
+web-automation, scraping-tools, antibot-bypass, turnstile-bypass,
+browser-fingerprinting, cdp-stealth, perimeter-x, imperva-bypass
+```
 
 ---
 

@@ -1,0 +1,24 @@
+# Ignore all tool source folders (we only want the analysis READMEs)
+botasaurus/
+patchright/
+XDriver/
+New folder/
+
+# Keep root-level analysis markdown files
+!README.md
+!patchright.md
+!XDriver-Analysis.md
+!botasaurus-analysis.md
+
+# OS files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# IDE
+.vscode/
+.idea/
+
+# Misc
+*.log
+*.tmp

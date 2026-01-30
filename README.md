@@ -39,7 +39,6 @@ This repository provides:
 | [**SeleniumBase**](./seleniumbase.md) | Selenium + UC Mode | Python | CAPTCHA solving, testing framework | [Read →](./seleniumbase.md) |
 | [**Botasaurus**](./botasaurus.md) | Selenium wrapper | Python | Human-like mouse movements | [Read →](./botasaurus.md) |
 | [**XDriver**](./xdriver.md) | Playwright CDP patch | Python | Quick stealth without code changes | [Read →](./xdriver.md) |
-| [**BotBrowser**](./botbrowser.md) | Patched Chromium | Multi | Enterprise anti-detection | [Read →](./botbrowser.md) |
 
 ---
 
@@ -47,30 +46,30 @@ This repository provides:
 
 ### Stealth Capabilities
 
-| Feature | Camoufox | Patchright | SeleniumBase | Botasaurus | XDriver | BotBrowser |
-|---------|:--------:|:----------:|:------------:|:----------:|:-------:|:----------:|
-| `navigator.webdriver` bypass | ✅ C++ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| `Runtime.enable` bypass | ✅ Juggler | ✅ | ✅ | ❌ | ✅ | ✅ |
-| Fingerprint rotation | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ❌ | ⭐⭐⭐⭐ |
-| Human mouse simulation | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐ |
-| CDP fingerprint evasion | N/A | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Cross-platform parity | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐ | ⭐⭐ | ⭐⭐⭐⭐⭐ |
-| CAPTCHA solving | ❌ | ❌ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ❌ | ❌ |
-| Cloudflare bypass | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
-| Ease of use | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ |
-| Cost | Free | Free | Free | Free | Free | $$ |
+| Feature | Camoufox | Patchright | SeleniumBase | Botasaurus | XDriver |
+|---------|:--------:|:----------:|:------------:|:----------:|:-------:|
+| `navigator.webdriver` bypass | ✅ C++ | ✅ | ✅ | ✅ | ✅ |
+| `Runtime.enable` bypass | ✅ Juggler | ✅ | ✅ | ❌ | ✅ |
+| Fingerprint rotation | ⭐⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐ | ⭐⭐ | ❌ |
+| Human mouse simulation | ⭐⭐⭐⭐ | ⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐ |
+| CDP fingerprint evasion | N/A | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ |
+| Cross-platform parity | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐ | ⭐ | ⭐⭐ |
+| CAPTCHA solving | ❌ | ❌ | ⭐⭐⭐⭐⭐ | ⭐⭐ | ❌ |
+| Cloudflare bypass | ⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐ |
+| Ease of use | ⭐⭐⭐⭐ | ⭐⭐⭐⭐ | ⭐⭐⭐ | ⭐⭐⭐⭐⭐ | ⭐⭐⭐⭐⭐ |
+| Cost | Free | Free | Free | Free | Free |
 
 ### Anti-Bot Service Coverage
 
-| Service | Camoufox | Patchright | SeleniumBase | Botasaurus | XDriver | BotBrowser |
-|---------|:--------:|:----------:|:------------:|:----------:|:-------:|:----------:|
-| Cloudflare WAF | ✅ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| Cloudflare Turnstile | ⚠️ | ✅ | ✅ | ✅ | ✅ | ✅ |
-| DataDome | ✅ | ✅ | ✅ | ⚠️ | ✅ | ✅ |
-| Kasada | ⚠️ | ✅ | ✅ | ❌ | ✅ | ✅ |
-| PerimeterX | ✅ | ⚠️ | ✅ | ❌ | ✅ | ✅ |
-| Akamai | ⚠️ | ⚠️ | ⚠️ | ❌ | ⚠️ | ✅ |
-| Imperva | ✅ | ⚠️ | ✅ | ❌ | ✅ | ✅ |
+| Service | Camoufox | Patchright | SeleniumBase | Botasaurus | XDriver |
+|---------|:--------:|:----------:|:------------:|:----------:|:-------:|
+| Cloudflare WAF | ✅ | ✅ | ✅ | ✅ | ✅ |
+| Cloudflare Turnstile | ⚠️ | ✅ | ✅ | ✅ | ✅ |
+| DataDome | ✅ | ✅ | ✅ | ⚠️ | ✅ |
+| Kasada | ⚠️ | ✅ | ✅ | ❌ | ✅ |
+| PerimeterX | ✅ | ⚠️ | ✅ | ❌ | ✅ |
+| Akamai | ⚠️ | ⚠️ | ⚠️ | ❌ | ⚠️ |
+| Imperva | ✅ | ⚠️ | ✅ | ❌ | ✅ |
 
 ✅ = Reliably bypasses | ⚠️ = Partial/conditional | ❌ = Not effective
 
@@ -86,7 +85,7 @@ This repository provides:
 |----------------|------------------|-----|
 | **Undetectable fingerprint spoofing** | [Camoufox](./camoufox.md) | C++ level = truly native, JS can't detect |
 | **Need fingerprint rotation** | [Camoufox](./camoufox.md) | BrowserForge statistical accuracy |
-| **Enterprise-level anti-bot** (Akamai, DataDome) | [BotBrowser](./botbrowser.md) | Most comprehensive fingerprint control |
+| **Enterprise-level anti-bot** (Akamai, DataDome) | [Patchright](./patchright.md) + [Camoufox](./camoufox.md) | Combine protocol stealth with fingerprint rotation |
 | **Need CAPTCHA solving** | [SeleniumBase](./seleniumbase.md) | Built-in Turnstile/reCAPTCHA handling |
 | **Maximum Chromium stealth + free** | [Patchright](./patchright.md) | Protocol-level CDP bypass |
 | **Human-like mouse movements** | [Botasaurus](./botasaurus.md) | Best Bézier curve implementation |
@@ -106,17 +105,17 @@ Understanding detection helps you choose the right tool:
 │                         DETECTION LAYERS                              │
 ├──────────────────────────────────────────────────────────────────────┤
 │  Layer 1: Protocol Detection                                          │
-│  ├─ Runtime.enable timing         [Patchright, BotBrowser, XDriver]  │
-│  ├─ Execution context leaks       [Patchright, BotBrowser]           │
-│  ├─ Binding exposure              [XDriver, BotBrowser]              │
+│  ├─ Runtime.enable timing         [Patchright, XDriver]              │
+│  ├─ Execution context leaks       [Patchright]                       │
+│  ├─ Binding exposure              [XDriver]                          │
 │  └─ Juggler isolation (Firefox)   [Camoufox - unique]                │
 ├──────────────────────────────────────────────────────────────────────┤
 │  Layer 2: Browser Fingerprinting                                      │
 │  ├─ navigator.webdriver           [All tools]                        │
-│  ├─ Canvas/WebGL fingerprints     [Camoufox C++, BotBrowser]         │
+│  ├─ Canvas/WebGL fingerprints     [Camoufox C++]                     │
 │  ├─ Screen/Window properties      [Camoufox C++ - undetectable]      │
-│  ├─ Audio context spoofing        [Camoufox C++, BotBrowser]         │
-│  └─ Font enumeration              [Camoufox, BotBrowser]             │
+│  ├─ Audio context spoofing        [Camoufox C++]                     │
+│  └─ Font enumeration              [Camoufox]                         │
 ├──────────────────────────────────────────────────────────────────────┤
 │  Layer 3: Behavioral Analysis                                         │
 │  ├─ Mouse movement patterns       [Botasaurus, Camoufox]             │
@@ -124,10 +123,10 @@ Understanding detection helps you choose the right tool:
 │  └─ Scroll/navigation patterns    [Botasaurus]                       │
 ├──────────────────────────────────────────────────────────────────────┤
 │  Layer 4: Network Analysis                                            │
-│  ├─ TLS fingerprinting (JA3/JA4)  [BotBrowser partial]               │
-│  ├─ WebRTC/UDP leakage            [Camoufox, BotBrowser, XDriver]    │
+│  ├─ TLS fingerprinting (JA3/JA4)  [Hard to spoof - use real browser] │
+│  ├─ WebRTC/UDP leakage            [Camoufox, XDriver]                │
 │  ├─ IP reputation scoring         [Use proxies]                      │
-│  └─ DNS leakage                   [BotBrowser SOCKS5H]               │
+│  └─ DNS leakage                   [Use SOCKS5H proxies]              │
 └──────────────────────────────────────────────────────────────────────┘
 ```
 
@@ -183,8 +182,8 @@ Camoufox (C++ spoofing + BrowserForge) + Residential Proxies
 
 ### Strategy 2: Behavioral + Protocol Stealth
 ```
-Botasaurus (human mouse) + BotBrowser (fingerprint control)
-= Human-like behavior + consistent fingerprints
+Botasaurus (human mouse) + Patchright (CDP stealth)
+= Human-like behavior + protocol-level evasion
 ```
 
 ### Strategy 3: CAPTCHA + Stealth

